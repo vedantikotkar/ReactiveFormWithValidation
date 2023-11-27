@@ -1,0 +1,47 @@
+<div class="t">
+<div class="mt-5">
+  <div [formGroup]="loginform">
+  <div>
+    <div>
+      <label>Name</label>
+    </div>
+    <div>
+      <input type="text" placeholder="Enter your name" formControlName="name" class="form-control" [ngClass]="{'is-invalid':submitted && form.name.errors}">
+      <div *ngIf="submitted && form.name.errors" class="Invalid-feedback">
+      <div *ngIf="form.name.errors.required">
+        Enter your name
+      </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <label>Email</label>
+    </div>
+    <div>
+     <input type="email" placeholder="Enter your email" formControlName="email"  class="form-control" [ngClass]="{'is-invalid':submitted && form.email.errors}">
+     <div *ngIf="submitted && form.email.errors" class="Invalid-feedback">
+      <div *ngIf="form.email.errors.required">
+        Enter your email
+      </div>
+      <div *ngIf="form.email.errors.email">
+        Enter valid email
+      </div>
+     </div>
+    </div>
+  </div>
+  <div>
+    <label>Password</label>
+    </div>
+    <div>
+      <input type="password" placeholder="Enter your password" formControlName="password" class="form-control" [ngClass]="{'is-invalid':submitted && form.password.errors}">
+      <div *ngIf="submitted && form.password.errors" class="Invalid-feedback">
+      <div *ngIf="form.password.errors.required">
+        Enter your password
+      </div>
+      </div>
+    </div>
+  <input type="button" value="submit" (click)="onSubmit()">
+  </div>
+</div>
+</div>
